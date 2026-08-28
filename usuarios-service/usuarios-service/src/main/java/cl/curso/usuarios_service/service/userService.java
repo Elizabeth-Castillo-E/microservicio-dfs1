@@ -35,11 +35,17 @@ public class UserService {
             "DESPACHADOR",
             "Realiza despachos"
     );
+    UserRole supervisorRole = new UserRole(
+            4L,
+            "SUPERVISOR",
+            "Supervisa las operaciones"
+    );
 
     userRoles = List.of(
             administratorRole,
             customerRole,
-            deliveryRole
+            deliveryRole,
+            supervisorRole
     );
 
     UserAddress address1 = new UserAddress(
@@ -81,7 +87,7 @@ public class UserService {
                     "12.345.678-5",
                     "Ana Pérez",
                     "ana@correo.cl",
-                    "+56911111111",
+                    "+56912345678",
                     administratorRole,
                     List.of(address1)
             ),
@@ -90,7 +96,7 @@ public class UserService {
                     "9.876.543-3",
                     "Bruno Soto",
                     "bruno@correo.cl",
-                    "+56922222222",
+                    "+56987654321",
                     customerRole,
                     List.of(address2)
             ),
@@ -102,6 +108,15 @@ public class UserService {
                     "+56933333333",
                     deliveryRole,
                     List.of(address3)
+            ),
+            new User(
+                    4L,
+                    "20.123.456-7",
+                    "David Gómez",
+                    "david@correo.cl",
+                    "+56944444444",
+                    supervisorRole,
+                    List.of(address1)
             )
     );
 }
