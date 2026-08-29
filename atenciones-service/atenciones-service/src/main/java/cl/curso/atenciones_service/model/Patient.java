@@ -1,18 +1,18 @@
 package cl.curso.atenciones_service.model;
 
 public class Patient {
-    private long idPatient;
-    private String namePatient;
-    private String lastNamePatient;
-    private String rutPatient;
-    private String emailPatient;
-    private String phonePatient;
-    private String addressPatient;
-    private String cityPatient;
-    private String regionPatient;
-    private String previsionPatient;
-    private String birthDatePatient;
-    private String emergencyContactPatient;
+    private final long idPatient;
+    private final String namePatient;
+    private final String lastNamePatient;
+    private final String rutPatient;
+    private final String emailPatient;
+    private final String phonePatient;
+    private final String addressPatient;
+    private final String cityPatient;
+    private final String regionPatient;
+    private final String previsionPatient;
+    private final String birthDatePatient;
+    private final String emergencyContactPatient;
 
     public Patient(long idPatient, String namePatient, String lastNamePatient, String rutPatient, String emailPatient, String phonePatient, String addressPatient, String cityPatient, String regionPatient, String previsionPatient, String birthDatePatient, String emergencyContactPatient) {
         this.idPatient = idPatient;
