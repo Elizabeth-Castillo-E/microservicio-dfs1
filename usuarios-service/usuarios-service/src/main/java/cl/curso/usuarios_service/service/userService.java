@@ -88,6 +88,7 @@ public class UserService {
                     "Ana Pérez",
                     "ana@correo.cl",
                     "+56912345678",
+                    
                     administratorRole,
                     List.of(address1)
             ),
@@ -97,6 +98,7 @@ public class UserService {
                     "Bruno Soto",
                     "bruno@correo.cl",
                     "+56987654321",
+                   
                     customerRole,
                     List.of(address2)
             ),
@@ -106,6 +108,7 @@ public class UserService {
                     "Carla Rojas",
                     "carla@correo.cl",
                     "+56933333333",
+                   
                     deliveryRole,
                     List.of(address3)
             ),
@@ -115,6 +118,7 @@ public class UserService {
                     "David Gómez",
                     "david@correo.cl",
                     "+56944444444",
+                   
                     supervisorRole,
                     List.of(address1)
             )
@@ -131,5 +135,6 @@ public List<UserRole> findAllRoles() {
 public List<UserAddress> findAllAddresses() {
     return userAddresses;
 }
+
     
 }

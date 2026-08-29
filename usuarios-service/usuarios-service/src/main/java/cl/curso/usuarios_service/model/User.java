@@ -1,5 +1,6 @@
 package cl.curso.usuarios_service.model;
 
+
 import java.util.List;
 
 public class User {
@@ -11,7 +12,7 @@ public class User {
 
     private final UserRole userRole;
     private final List<UserAddress> userAddresses;
-
+   
     public User(long idUser, 
                 String userRut, 
                 String userName, 
@@ -43,6 +44,7 @@ public class User {
     public String getUserPhone() {
         return userPhone;
     }
+   
  public UserRole getUserRole() {
         return userRole;
     }
