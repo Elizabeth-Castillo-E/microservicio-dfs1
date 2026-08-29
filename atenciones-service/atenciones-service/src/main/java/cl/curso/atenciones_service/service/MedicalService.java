@@ -249,7 +249,7 @@ public Patient findPatientById(long id) {
             .orElseThrow(() ->
                     new ResponseStatusException(
                             HttpStatus.NOT_FOUND,
-                            "No existe el paciente con ID " + id
+                            "su paciente es imaginario, este numero no existe " + id
                     )
             );
 }
@@ -271,7 +271,7 @@ public MedicalHistory findHistoryByPatientId(long patientId) {
             .orElseThrow(() ->
                     new ResponseStatusException(
                             HttpStatus.NOT_FOUND,
-                            "No existe historial para el paciente " + patientId
+                            "ya le dije, su paciente no existe " + patientId
                     )
             );
 }
