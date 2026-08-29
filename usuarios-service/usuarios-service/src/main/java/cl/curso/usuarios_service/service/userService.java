@@ -4,7 +4,8 @@ import cl.curso.usuarios_service.model.User;
 import cl.curso.usuarios_service.model.UserAddress;
 import cl.curso.usuarios_service.model.UserRole;
 import org.springframework.stereotype.Service;
-
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @Service
@@ -136,5 +137,33 @@ public List<UserAddress> findAllAddresses() {
     return userAddresses;
 }
 
-    
+    public User findUserById(long id) {
+    return findAllUsers().stream()
+        .filter(user -> user.getIdUser() == id)
+        .findFirst()
+        .orElseThrow(() -> new ResponseStatusException(
+            HttpStatus.NOT_FOUND,
+            "El usuario aun no se ha registrado en nuestras bases " + id
+        ));
+}
+
+public UserRole findRoleById(long id) {
+    return findAllRoles().stream()
+        .filter(role -> role.getIdUserRole() == id)
+        .findFirst()
+        .orElseThrow(() -> new ResponseStatusException(
+            HttpStatus.NOT_FOUND,
+            "Si no está, podemos crear este nuevo ROL " + id
+        ));
+}
+
+public UserAddress findAddressById(long id) {
+    return findAllAddresses().stream()
+        .filter(address -> address.getIdUserAddress() == id)
+        .findFirst()
+        .orElseThrow(() -> new ResponseStatusException(
+            HttpStatus.NOT_FOUND,
+            "Esta direccion no esta en el mapa " + id
+        ));
+}
 }
