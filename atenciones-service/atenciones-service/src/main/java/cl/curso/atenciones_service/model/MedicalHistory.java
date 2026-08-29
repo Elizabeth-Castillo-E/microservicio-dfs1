@@ -10,12 +10,16 @@ public class MedicalHistory {
     
 
     public MedicalHistory(
-        long idMedicalHistory, long idPatient, String bloodType, List<String> allergies, List<String> chronicConditions) {
-        this.idMedicalHistory = idMedicalHistory;
-        this.idPatient = idPatient;
-        this.bloodType = bloodType;
-        this.allergies = allergies;
-        this.chronicConditions = chronicConditions;
+        long idMedicalHistory, 
+        long idPatient, 
+        String bloodType, 
+        List<String> allergies, 
+        List<String> chronicConditions) {
+                this.idMedicalHistory = idMedicalHistory;
+                this.idPatient = idPatient;
+                this.bloodType = bloodType;
+                this.allergies = allergies;
+                this.chronicConditions = chronicConditions;
     }
 
     public long getIdMedicalHistory() {
