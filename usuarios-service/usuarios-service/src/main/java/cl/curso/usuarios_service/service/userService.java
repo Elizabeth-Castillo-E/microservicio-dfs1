@@ -91,7 +91,7 @@ public class UserService {
                     "+56912345678",
                     
                     administratorRole,
-                    List.of(address1)
+                    List.of(address1,address2)
             ),
             new User(
                     2L,
