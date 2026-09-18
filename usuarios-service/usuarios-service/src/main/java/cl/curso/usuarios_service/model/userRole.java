@@ -6,6 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "USER_ROLES")
@@ -17,22 +19,26 @@ public class UserRole {
     private Long idUserRole;
 
     @Column(name = "ROLE_NAME", nullable = false, unique = true, length = 50)
+    @NotBlank(message = "El nombre del rol es obligatorio")
+    @Size(max = 50, message = "El nombre del rol no puede superar 50 caracteres")
     private String userNameRole;
 
     @Column(name = "ROLE_DESCRIPTION", length = 250)
+    @NotBlank(message = "La descripción del rol es obligatoria")
+    @Size(max = 250, message = "La descripción no puede superar 250 caracteres")
     private String userDescriptionRole;
 
     protected UserRole() {
-        // Constructor requerido por JPA.
+        
     }
 
-    public UserRole(long idUserRole, String userNameRole, String userDescriptionRole) {
-        this.idUserRole = idUserRole;
+    public UserRole(String userNameRole, String userDescriptionRole) {
+        
         this.userNameRole = userNameRole;
         this.userDescriptionRole = userDescriptionRole;
     }
 
-    public long getIdUserRole() {
+    public Long getIdUserRole() {
         return idUserRole;
     }
 
@@ -42,5 +48,16 @@ public class UserRole {
 
     public String getUserDescriptionRole() {
         return userDescriptionRole;
+    }
+
+      public void setIdUserRole(Long idUserRole) {
+        this.idUserRole = idUserRole;
+    }
+      public void setUserNameRole(String userNameRole) {
+        this.userNameRole = userNameRole;
+    }
+
+    public void setUserDescriptionRole(String userDescriptionRole) {
+        this.userDescriptionRole = userDescriptionRole;
     }
 }
